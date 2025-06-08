@@ -2,25 +2,33 @@ package it.uniroma3.diadia.ambienti;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Scanner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.ambienti.Labirinto.LabirintoBuilder;
 
 class LabirintoTest {
 	
 	private Labirinto labirinto;
-	private IOConsole io=new IOConsole();
+	private Scanner scanner=new Scanner(System.in);
+	private IOConsole io=new IOConsole(scanner);
 	private Stanza stanzaVincente;
 	private Stanza stanzaCorrente;
+	private LabirintoBuilder builder;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		labirinto=new Labirinto(io);
-		stanzaVincente=new Stanza("N13",io);
-		stanzaCorrente=labirinto.getStanzaCorrente();
+		builder = Labirinto.newBuilder(io)
+	            .addStanzaIniziale("Atrio")
+	            .addStanzaVincente("Biblioteca");
+	    labirinto = builder.build();
+	    stanzaCorrente = labirinto.getStanzaCorrente();
+	    stanzaVincente = new Stanza("N13", new IOConsole(scanner));
 		}
 
 	@Test //stanzaIniziale

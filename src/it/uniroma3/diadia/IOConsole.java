@@ -6,8 +6,8 @@ public class IOConsole implements IO {
 
     private Scanner scannerDiLinee;
 
-    public IOConsole() {
-        this.scannerDiLinee = new Scanner(System.in);
+    public IOConsole(Scanner scanner) {
+        this.scannerDiLinee = scanner;
     }
 
     @Override

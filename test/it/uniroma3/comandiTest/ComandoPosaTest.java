@@ -11,13 +11,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Scanner;
+
 class ComandoPosaTest {
 
     private Comando comando;
     private Partita partita;
     private Giocatore giocatore;
     private Stanza stanza;
-    private IO io=new IOConsole();
+    private Scanner scanner=new Scanner(System.in);
+    private IO io=new IOConsole(scanner);
 
     @BeforeEach
     void setUp() {

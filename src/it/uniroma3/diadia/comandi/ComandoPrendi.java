@@ -31,4 +31,16 @@ public class ComandoPrendi implements Comando {
     public void setParametro(String parametro) {
         this.nomeAttrezzo = parametro;
     }
+    
+    @Override
+    public String getNome()
+    {
+    	return "prendi";
+    }
+    
+    @Override
+    public String getParametro()
+    {
+    	return this.nomeAttrezzo;
+    }
 }

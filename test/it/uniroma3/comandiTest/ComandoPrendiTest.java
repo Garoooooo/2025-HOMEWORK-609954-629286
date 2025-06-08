@@ -8,11 +8,14 @@ import it.uniroma3.diadia.giocatore.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Scanner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ComandoPrendiTest {
-	private IO io=new IOConsole();
+	Scanner scanner=new Scanner(System.in);
+	private IO io=new IOConsole(scanner);
     private Borsa borsa;
     private Attrezzo attrezzo;
 	private Stanza stanza;

@@ -2,6 +2,7 @@ package it.uniroma3.comandiTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import it.uniroma3.diadia.comandi.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -36,7 +37,7 @@ class FabbricaComandiFisarmonicaTest {
 	}
 
 	@Test
-	void testComandoSenzaParametro() {
+	void testComandoFine() {
 		Comando c = fabbrica.costruisciComando("fine");
 		assertEquals("fine", c.getNome());
 		assertNull(c.getParametro());
@@ -47,6 +48,22 @@ class FabbricaComandiFisarmonicaTest {
 		Comando c = fabbrica.costruisciComando("vola su");
 		assertEquals("nonvalido", c.getNome());
 		assertEquals("su", c.getParametro());
+	}
+	
+	@Test
+	void testComandoGuarda()
+	{
+		Comando c=fabbrica.costruisciComando("guarda");
+		assertEquals("guarda",c.getNome());
+		assertNull(c.getParametro());
+	}
+	
+	@Test
+	void testComandoAiuto()
+	{
+		Comando c=fabbrica.costruisciComando("aiuto");
+		assertEquals("aiuto",c.getNome());
+		assertNull(c.getParametro());
 	}
 
 }

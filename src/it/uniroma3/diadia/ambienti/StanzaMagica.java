@@ -16,7 +16,7 @@ public class StanzaMagica extends Stanza {
 		
 	}
 	public StanzaMagica(String nome, IO io,int sogliaMagica) {
-		super(nome, io);
+		super(nome,io);
 		this.sogliaMagica=sogliaMagica;
 		this.contatoreAttrezzi=0;
 	}

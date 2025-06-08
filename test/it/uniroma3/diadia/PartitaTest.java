@@ -1,6 +1,9 @@
 package it.uniroma3.diadia;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Scanner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +14,8 @@ class PartitaTest {
     private Partita partita;
     private Stanza stanzaVincente;
     private Stanza stanzaNormale;
-    private IOConsole io=new IOConsole();
+    private Scanner scanner=new Scanner(System.in);
+    private IOConsole io=new IOConsole(scanner);
 
     @BeforeEach
     void setUp() {

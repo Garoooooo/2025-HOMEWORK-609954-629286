@@ -1,18 +1,23 @@
 package it.uniroma3.diadia.ambienti;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Scanner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
+import it.uniroma3.diadia.ambienti.Direzione;
 
 public class StanzaTest {
     
     private Stanza stanzaVuota;
     private Stanza stanzaConAttrezzo;
     private Attrezzo martello;
-    private IOConsole io=new IOConsole();
+    private Scanner scanner=new Scanner(System.in);
+    private IOConsole io=new IOConsole(scanner);
     
     @BeforeEach
     public void setUp() {
@@ -66,7 +71,7 @@ public class StanzaTest {
     @Test   //impostastanzaadiacente
     public void testImpostaStanzaAdiacente() {
         Stanza N15 = new Stanza("N15", io);
-        stanzaVuota.impostaStanzaAdiacente("nord", N15);
-        assertEquals(N15, stanzaVuota.getStanzaAdiacente("nord"));
+        stanzaVuota.impostaStanzaAdiacente(Direzione.NORD, N15);
+        assertEquals(N15, stanzaVuota.getStanzaAdiacente(Direzione.NORD));
     }
 }

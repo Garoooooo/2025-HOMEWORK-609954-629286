@@ -75,4 +75,8 @@ public class Partita {
     public Giocatore getGiocatore() {
         return this.giocatore;
     }
+
+	public void setLabirinto(Labirinto labirinto2) {
+    this.labirinto=labirinto2;
+	}
 }

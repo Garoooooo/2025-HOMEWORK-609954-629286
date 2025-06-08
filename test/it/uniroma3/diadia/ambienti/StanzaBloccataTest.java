@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.ambienti;
 
 import static org.junit.jupiter.api.Assertions.*;
+import it.uniroma3.diadia.ambienti.Direzione;
 import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +28,7 @@ class StanzaBloccataTest {
 	@Test
 	void testStanzaConAttrezzo() {
 		stanzaBloccata.addAttrezzo(chiave);
-		stanzaBloccata.impostaStanzaAdiacente("sud",stanza);
+		stanzaBloccata.impostaStanzaAdiacente(Direzione.SUD,stanza);
 		assertEquals(stanzaBloccata.toString(),stanzaBloccata.getDescrizione());
 		assertEquals(stanzaBloccata.getStanzaAdiacente("sud"),stanza);
 	}
@@ -35,8 +36,8 @@ class StanzaBloccataTest {
 	@Test
 	void testStanzaVuota()
 	{
-		stanzaBloccata.impostaStanzaAdiacente("sud", stanza);
-		stanza.impostaStanzaAdiacente("sud", stanza);
+		stanzaBloccata.impostaStanzaAdiacente(Direzione.SUD, stanza);
+		stanza.impostaStanzaAdiacente(Direzione.SUD, stanza);
 		assertNotEquals(stanzaBloccata.getDescrizione(),stanza.getDescrizione());
 		assertEquals(stanzaBloccata.getStanzaAdiacente("sud"),stanzaBloccata);
 	}
@@ -44,9 +45,9 @@ class StanzaBloccataTest {
 	@Test
 	void testStanzaConAltroAttrezzo()
 	{
-		stanzaBloccata.impostaStanzaAdiacente("sud", stanza);
+		stanzaBloccata.impostaStanzaAdiacente(Direzione.SUD, stanza);
 		stanzaBloccata.addAttrezzo(lanterna);
-		stanza.impostaStanzaAdiacente("sud", stanza);
+		stanza.impostaStanzaAdiacente(Direzione.SUD, stanza);
 		assertNotEquals(stanzaBloccata.getDescrizione(),stanza.getDescrizione());
 		assertEquals(stanzaBloccata.getStanzaAdiacente("sud"),stanzaBloccata);
 	}

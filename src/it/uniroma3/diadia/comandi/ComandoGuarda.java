@@ -3,7 +3,7 @@ import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
-public class ComandoGuarda implements Comando {
+public class ComandoGuarda extends AbstractComando {
 	private String input;
 	
 	@Override
@@ -16,8 +16,17 @@ public class ComandoGuarda implements Comando {
     System.out.println("Contenuto borsa: "+giocatore.getBorsa());
    
 	}
-    
-    @Override
-    public void setParametro(String parametro) {
-    } 
+	
+	@Override
+	public String getNome()
+	{
+		return "guarda";
+	}
+	
+	@Override
+	public String getParametro()
+	{
+		return null;
+	}
+	
 }
